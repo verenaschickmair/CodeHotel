@@ -1,0 +1,22 @@
+/*ABOUT*/
+#about{
+    margin-top: 100px;
+}
+
+#about > div.container > div.row.m-5 > p{
+    font-weight: 300;
+}
+
+.container--about{
+    font-weight: 300;
+    width: 1050px;
+}
+
+.carousel--img{
+    max-height: 500px;
+}
+
+.carousel{
+    width: 70%;
+    margin-bottom: 50px;
+}

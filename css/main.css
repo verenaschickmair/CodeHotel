@@ -1,0 +1,52 @@
+@import url("navigation.css");
+@import url("intro.css");
+@import url("about.css");
+@import url("rooms.css");
+@import url("booking.css");
+@import url("contact.css");
+@import url("map.css");
+@import url("footer.css");
+
+:root{
+    --green: #6BCB34;
+    --black: #0C0C0C;
+}
+
+body{
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    color: white;
+    background-color: var(--black);
+}
+
+.title {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.h1 {
+    text-align: center;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+#rooms, #booking, #about{
+    height: 720px;
+}
+
+#rooms, #about{
+    display: flex;
+    align-items: center;
+}
+
+a:hover{
+    color: var(--green);
+}
+
+
+
