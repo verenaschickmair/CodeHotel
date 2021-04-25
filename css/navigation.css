@@ -1,0 +1,29 @@
+/*NAVIGATION AND CANVAS*/
+.canvas--nav {
+    list-style: none;
+}
+
+.canvas--nav li {
+    padding: 20px;
+    text-align: right;
+}
+
+.canvas--nav li a {
+    color: var(--green);
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.canvas--nav li a:hover {
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+.btn-burger {
+    background-color: var(--black);
+    border: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}

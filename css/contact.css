@@ -1,0 +1,39 @@
+/*CONTACT*/
+#contact {
+    height: 720px;
+}
+
+.container--contact {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.container--contact a{
+    color: white;
+    text-decoration: none;
+}
+
+.contact--box {
+    position: absolute;
+    top: 85px;
+    right: 30px;
+    padding: 30px;
+    width: 300px;
+    font-size: 16px;
+    background-color: #1d1d1d;
+    box-shadow: 0px 0px 20px black;
+    z-index: 999;
+}
+
+#contact .row{
+    width: 100%;
+}
+
+
+.contact--box p {
+    text-align: center;
+}
+
+.socialMedia{
+    text-align: center;
+}

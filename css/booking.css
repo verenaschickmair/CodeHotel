@@ -1,0 +1,112 @@
+/*BOOKING FORM*/
+/*HIER ÖFTER KEIN BEM, DA BOOTSTRAP KLASSEN FÜR FORM GREIFEN*/
+#booking-form {
+    position: relative;
+    max-width: 642px;
+    width: 100%;
+    margin: auto;
+    padding: 40px;
+    overflow: hidden;
+    border-radius: 5px;
+    z-index: 20;
+}
+
+#booking-form .form-header {
+    text-align: center;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+#booking-form .form-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+#booking-form .form-control {
+    background-color: rgba(255, 255, 255, 0.2);
+    height: 60px;
+    padding: 0px 25px;
+    border: none;
+    border-radius: 40px;
+    color: #fff;
+    box-shadow: 0px 0px 0px 2px transparent;
+    transition: 0.2s;
+}
+
+#booking-form .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#booking-form .form-control:focus {
+    box-shadow: 0px 0px 0px 2px var(--green);
+}
+
+#booking-form input[type="date"].form-control {
+    padding-top: 16px;
+}
+
+#booking-form input[type="date"].form-control:invalid {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#booking-form input[type="date"].form-control + .form-label {
+    opacity: 1;
+    top: 10px;
+}
+
+#booking-form select.form-control:invalid {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#booking-form select.form-control + .select-arrow {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    width: 32px;
+    line-height: 32px;
+    height: 32px;
+    text-align: center;
+    pointer-events: none;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+}
+
+#booking-form select.form-control option {
+    color: #555555;
+    font-size: 14px;
+}
+
+#booking-form .form-label {
+    position: absolute;
+    top: -10px;
+    left: 25px;
+    opacity: 0;
+    color: var(--green);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    height: 15px;
+    line-height: 15px;
+    transition: 0.2s all;
+}
+
+#booking-form .submit-btn {
+    color: white;
+    background-color: var(--green);
+    font-weight: 700;
+    height: 60px;
+    padding: 10px 30px;
+    width: 100%;
+    border-radius: 40px;
+    border: none;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 1.3px;
+    transition: 0.2s all;
+}
+
+#booking-form .submit-btn:hover,
+#booking-form .submit-btn:focus {
+    opacity: 0.8;
+}

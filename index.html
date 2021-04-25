@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CodeHotel</title>
+
+    <!--BOOTSTRAP 5-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+      crossorigin="anonymous"/>
+
+    <!--LEAFLET MAP CSS-->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""/>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/media.css" />
+  </head>
+
+  <body>
+    <!--NAV-->
+    <header>
+      <div class="d-flex justify-content-between">
+        <div class="m-4" id="top">
+          <a class="title" href="index.html">CodeHotel &#123;</a>
+        </div>
+
+        <button class="btn btn-burger" type="button">
+          <lord-icon
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasRight"
+            aria-controls="offcanvasRight"
+            src="https://cdn.lordicon.com/phtfmmnb.json"
+            trigger="morph"
+            colors="primary:#ffffff,secondary:#08a88a"
+            scale="40"
+            style="width:70px;height:70px">
+          </lord-icon>
+        </button>
+      </div>
+
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight">
+        <div class="offcanvas-header">
+          <button
+            type="button"
+            class="btn-close text-reset"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="canvas--nav">
+            <li><a href="#top">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#rooms">Rooms</a></li>
+            <li><a href="#booking-form">Make a reservation</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <!--INTRO-->
+    <main>
+      <div class="intro mb-5">
+        <div class="intro--banner">
+          <h1>Want to<br />have a fabulous<br />stay?</h1>
+          <a href="#booking">
+            <button class="mt-4">
+              Book a room
+              <lord-icon
+                src="https://cdn.lordicon.com/wnkegycl.json"
+                trigger="morph"
+                colors="primary:#ffffff,secondary:#08a88a"
+                stroke="100"
+                scale="40"
+                style="width:50px;height:50px">
+              </lord-icon>
+              <span class="btn-background"></span>
+            </button>
+          </a>
+          <img
+            src="https://cdn.glitch.com/2405c02f-712b-420c-bfaf-6af65c8989c5%2FHotel.png?v=1617896301152"
+            alt="Hotel"
+            width="400px"/>
+        </div>
+        <div class="intro--options">
+          <a href="#about">
+            <h3>About Codehotel</h3>
+            <p>We offer great hotel rooms and courses for coders.</p>
+          </a>
+          <a href="#rooms">
+            <h3>Fantastic Rooms</h3>
+            <p>Look at our rooms and fantasize about your stay.</p>
+          </a>
+          <a href="#booking-form">
+            <h3>Book a Room</h3>
+            <p>Are you interested? Book a room now.</p>
+          </a>
+        </div>
+        <div class="container-icon mb-5">
+          <lord-icon
+            src="https://cdn.lordicon.com/xwjtkymn.json"
+            trigger="loop"
+            colors="primary:#ffffff,secondary:#ffffff"
+            style="width:50px;height:50px">
+          </lord-icon>
+        </div>
+      </div>
+
+      <!--ABOUT US-->
+      <div id="about">
+        <div class="container">
+          <div class="h1">
+            <h1>About Us</h1>
+          </div>
+          <div class="row m-5">
+            <p>
+              What is CodeHotel? It is a hotel, but not just any hotel. We offer
+              great hotel rooms, business rooms and also coding courses. Our
+              hotel has beautiful rooms, a pool, a spa area as well as business
+              rooms. You can book rooms for your chilled holiday, but you can
+              also book business trips with business rooms, which have some
+              special extras for coders. But thats not everything. We also teach
+              you coding courses if you are interested in it.
+            </p>
+          </div>
+
+          <div class="row">
+            <div
+              id="carouselExampleCaptions"
+              class="carousel slide col"
+              data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleCaptions"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  aria-label="Slide 1"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleCaptions"
+                  data-bs-slide-to="1"
+                  aria-label="Slide 2"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleCaptions"
+                  data-bs-slide-to="2"
+                  aria-label="Slide 3"
+                ></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    src="https://cdn.glitch.com/2405c02f-712b-420c-bfaf-6af65c8989c5%2Flobby.jpg?v=1618746379272"
+                    class="d-block w-100 carousel--img"
+                    alt="Lobby"/>
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>Lobby and Chill Area</h5>
+                    <p>
+                      In our Lobby and chill area you can meet different people
+                      who check into our hotel.
+                    </p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="https://cdn.glitch.com/2405c02f-712b-420c-bfaf-6af65c8989c5%2FbarNeu1.jpg?v=1618747868304"
+                    class="d-block w-100 carousel--img"
+                    alt="Cafe"/>
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>Coder Café</h5>
+                    <p>
+                      If you want to do some coding whilst having a nice cup of
+                      coffe your right here.
+                    </p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="https://cdn.glitch.com/2405c02f-712b-420c-bfaf-6af65c8989c5%2Fpool3.jpg?v=1618748945662"
+                    class="d-block w-100 carousel--img"
+                    alt="Pool"/>
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>Pool Area</h5>
+                    <p>
+                      You just want to relax and have a swim? Hop into our
+                      outdoor pool.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--ROOMS-->
+      <div id="rooms">
+        <div class="container">
+          <div class="h1">
+            <h1>Our Rooms</h1>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="room--card">
+                <img
+                  src="https://cdn.glitch.com/2405c02f-712b-420c-bfaf-6af65c8989c5%2Fgreen-room-with-one-king.jpg?v=1618764121046"
+                  class="img img-responsive"
+                  style="width:100%; height:100%"/>
+                <div class="room--name">Luxury Suite</div>
+                <div class="room--info">2 Persons - 100 Euro / Night</div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="room--card">
+                <img
+                  src="https://cdn.glitch.com/2405c02f-712b-420c-bfaf-6af65c8989c5%2FGreen_Hotel-Genk-Double_room_standard-3-46366.jpg?v=1618765424112"
+                  class="img img-responsive"
+                  style="width:100%; height:100%"/>
+                <div class="room--name">Fancy Double</div>
+                <div class="room--info">2 Persons - 70 Euro / Night</div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="room--card">
+                <img
+                  src="https://cdn.glitch.com/2405c02f-712b-420c-bfaf-6af65c8989c5%2Fstayinnschwaz1.jpg?v=1618766329752"
+                  class="img img-responsive"
+                  style="width:100%; height:100%"/>
+                <div class="room--name">Cozy Single</div>
+                <div class="room--info">1 Person - 50 Euro / Night</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--BOOKING FORM-->
+      <div id="booking">
+        <div class="container">
+          <div class="row">
+            <div id="booking-form">
+              <div class="h1">
+                <h1>Make your reservation</h1>
+              </div>
+              <form>
+                <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input class="form-control" type="date" required />
+                    <span class="form-label">Check In</span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input class="form-control" type="date" required />
+                    <span class="form-label">Check out</span>
+                  </div>
+                </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <select class="form-control" required>
+                        <option value="" selected hidden>room type</option>
+                        <option>Luxury Suite</option>
+                        <option>Fancy Double</option>
+                        <option>Cozy Single</option>
+                      </select>
+                      <span class="select-arrow"></span>
+                      <span class="form-label">room type</span>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <select class="form-control" required>
+                        <option value="" selected hidden>no of adults</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                      </select>
+                      <span class="select-arrow"></span>
+                      <span class="form-label">Adults</span>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <select class="form-control" required>
+                        <option value="" selected hidden>no of rooms</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                      </select>
+                      <span class="select-arrow"></span>
+                      <span class="form-label">no of rooms</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input
+                        class="form-control"
+                        type="email"
+                        placeholder="enter your email"/>
+                      <span class="form-label">Email</span>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input
+                        class="form-control"
+                        type="tel"
+                        placeholder="enter your phone"/>
+                      <span class="form-label">Phone</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-btn">
+                  <button class="submit-btn">Book Now</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--CONTACT-->
+      <div id="contact" class="container">
+        <div class="h1">
+          <h1>Contact Us</h1>
+        </div>
+        <div class="row">
+          <div class="row-fluid container--contact col" id="mapid">
+            <div class="contact--box">
+              <h5>Contact &nbsp; &#123;</h5>
+              <br />
+              <p>Northeast 15th Avenue, Portland</p>
+              <p>codehotel@office.com</p>
+              <p>+503.400.6000</p>
+              <br />
+              <div class="socialMedia">
+                <img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAADCUlEQVR
+                      IicWXz28UZRjHP887O13bmxQsSjTWpNaTEqUFTJBwEUUIJ5PCGT1YEzQp0f8AD02Qw4KJnGmMNy0JxBCUGBBakgYOhMaIHsCyLHjr
+                      2s7O+/WwPxy2ZWe2u+j3NPPOd57PvO/7vO/7DPxPsjTDR1dHNiqInwHCjDEji4PiidGZhbbB41dG+3E6AjoAvJAR2Kw/TDYl2WRh6
+                      9UHqeCPr72+Wz6YAj29RmCzHgJjhZHZHx4LrkLdNJDrErSuCrAnCW+AP5x9Y30oN9/FnjbrQU8UvnzszcsPAVy9NZSb6CL0JvAdoE
+                      Rb/3LP8kT9pgoWVkukrigXB7sKI7P7gemmRw2GQXXJmOnPTFFNd5BNC27VAgxj2otsU90ieB/Zz2b6ERhOvh73LA989dr1ogOordM
+                      0LWE6HMGgnD+OrIisaKYvIxg02SfAUu1jvq11ZLg5iFVyG+Hf7E3bHP5GthvvFnKm82bagVWnTzJCuOi8OxQ5P+dM54B8i1ghJJKr
+                      pUyfIVvA+Utm2rGK4604iC+H3t0FPs8SMh1suhPBSZlOAf0tnP0+iL/e0Fc+AdztGCzZ9/lKbugxPX3UCztL5adeYmU2tw8G5pWrb
+                      M7gq8Jlm2Wa7xhsJvMypfkafpmcd6mnXpahHsL5uazg2DQn01DHYDPtq8h+BS5m4F4Y6CvfNtjXMRjZplA2HsTBIWDFuZpQyZk+KC
+                      72jgue7Rxc1ReR888FcbDd4KdVnl9wpm2SPW9wNEvAOjhK8eWd6VwcxO+t7yu/7eEVwUHBQbwb3tBXfsfDfsFZWu9aDVYOwOKgSHr
+                      i5oFj9xd7jwSmM152E8CCeKK02LuXDMMLoFxlARKFwPjMlt+AwSwvr1mm3wtbrg1CYo5N9s0ThQLITtcvG2DJJqkWZk9KJZ9fmlwB
+                      rpWgY1QLs24rQjZ28tUbf60AA9SqwD20Xq/tqoTs3cLozPlk46p76qeXtq+rFWYHkL24RuBtYMrnlyaTPW0JTurwL1sHlsNogDZ+Y
+                      Xqi8N7xbVfutfmh/43+AUK7JBIZ7kJlAAAAAElFTkSuQmCC"/>
+                <img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAACwUlEQVR
+                        Iie2Vy0tUcRTHP+fn2IgZLcRduYiiFwh6pww0SKhFERQF1aIsWgTlYxEFboJZ9AdkOT0gREpo4SLCHlSQ0QOiuTP0UNpFL4uEMGpK
+                        R2d+p0UZ82zu1Kyq7+r+zutz7uWe84P/+tslpSiyZ2hNRWVVbKNRqVNjVVSexGJVV/pabk+mxgVHls8KLh+ZygJ3PGhcVuaPvz1W/
+                        +ijV+gB12kRlXPAvAzXK6vSWpHwPY37EutFdPdE3L+1t/n+ZwCTGmnLkl3TCd/g3ntNc7xA90caVonK1RxQgFojenOqfHpMRM+LaF
+                        9v0/3YjNNkBDcAzZX+qaGOB425iqVJrDkJVPwipBwwCpdUxWmPOO35wH4ARR1blnzUFg7syFfxQKRhqUB9oeYAEdgM1L5/vuBkPvB
+                        IynM1cKEtHLjbFg5sQNP/B2PNIg/Q71I5WxNwtw9sG0jOmHxprUGvwqaMtGbgSpsbeM1DuSjG3rOiw0nVpFFvQyHG3ggKNtWWBp4S
+                        veZT6RfYmSN/PqKdqtIpKkXNYdKasUxb2qeepRI1YIEPRdQtKKPyLtPmyzi/VGgtJRSI1VR9eZHVTPrJnigxFGBoZlvlBfc40euoH
+                        C0pVvRaLnPmOBFaGT6isBvR0RJQxycmK/o9gYOKEZXVqvIMiP8RFj0+s5sLgwWL6IjAWn5sst+j6mjSH+/O584CA4QCbjcQ+m0oWB
+                        FtPVX3dLwoMIKGVrjtBlkHDAJvisKKHu1xord+GVKoRrvrLFGVs0CTR+yxUMA9iKBFgw89rps9mfA1q8peVLaQvWhyKS6ih3sCEU+
+                        74Ce4I9Kw2lrTBSwGavl+l3rVUBI6T69wh70mpL3xPteZ61PZZZA9ijoFcj+hchk4E1oZvlNEk9ngVHVE62vstDRizEJUqhHKUb4i
+                        +sbAcHWsKhpsuZ0oFvhf/46+Aedx+Nb2VpUSAAAAAElFTkSuQmCC"/>
+                <img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAABnUlEQ
+                          VRIie2Wvy8DYRjHP8+1oqm7jZXJphHRkrCQ+Ae6mmrpoP4CVqwiQcJUk81mJgaDq0j4C3Rlu4sIeo9B73IpqureGOo7vc/z/vi8
+                          37x3Tx7oNUk8KJ3OZQYcb0lgTFXSiQBEX4Fb33Oq1fmzpw/g0ulcJmv7FwITSQBbpXD96NszIdwKJ2zHK5mCAghM2I5XCmMrNpc
+                          zBf2MEYGTetN2ijOsdgtNKimXLwJHiNYIrH4VnQaKQMokuIHKws6Uex5PrriFmqKTxsAKR3st0E70a7DASTheviwURHQRyCo6Yh
+                          RMYN1FlxDdAmY72fbrrzpIvz5HYCTT6b5uHdcF2QBoqESOA2XTEhkEUHQdGEoULMj9TsE9aM3vTbnHAOXaZLZPZbfdGUYKSF8jN
+                          c43prpyrOhIxc3vA6RFN7bzV3WAFTe/pjAMweh3Z3T7xoNAGeBZ9ACov6elSJuiEdef1ep/cA+Bm92gUcUZcce3psGByk04jv5j
+                          33OqWdsv/7TTTAXWasXNP8B7YflqXbO9PQzjDw19swXNmW7oe09vFHWHX7nwfTgAAAAASUVORK5CYII="/>
+              </div>
+              <h5>&#125;</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="title mb-5">&nbsp; &nbsp; &nbsp; &#125;</p>
+      <div id="black"></div>
+    </main>
+
+    <!--FOOTER-->
+    <footer class="footer">
+      <div class="info">
+        <p>
+          <b>CodeHotel</b><br />
+          Northeast 15th Avenue, Portland<br />
+          Tel. +503.400.6000<br />
+          codehotel@office.com
+        </p>
+      </div>
+
+      <p class="copyright">
+        © by Verena Schickmair & Christina Wanke 2021
+      </p>
+
+      <div class="social media">
+        <p>Mehr Infos?</p>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          x="0px"
+          y="0px"
+          width="24"
+          height="24"
+          viewbox="0 0 172 172"
+          style=" fill:#000000;">
+          <g
+            fill="none"
+            fill-rule="nonzero"
+            stroke="none"
+            stroke-width="1"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-miterlimit="10"
+            stroke-dasharray=""
+            stroke-dashoffset="0"
+            font-family="none"
+            font-weight="none"
+            font-size="none"
+            text-anchor="none"
+            style="mix-blend-mode: normal">
+            <path d="M0,172v-172h172v172z" fill="none"></path>
+            <g fill="#ffffff">
+              <path
+                d="M55.04,10.32c-24.65626,0 -44.72,20.06374 -44.72,44.72v61.92c0,24.65626 20.06374,44.72 44.72,44.72h61.92c24.65626,0 44.72,-20.06374 44.72,-44.72v-61.92c0,-24.65626 -20.06374,-44.72 -44.72,-44.72zM55.04,17.2h61.92c20.9375,0 37.84,16.9025 37.84,37.84v61.92c0,20.9375 -16.9025,37.84 -37.84,37.84h-61.92c-20.9375,0 -37.84,-16.9025 -37.84,-37.84v-61.92c0,-20.9375 16.9025,-37.84 37.84,-37.84zM127.28,37.84c-3.79972,0 -6.88,3.08028 -6.88,6.88c0,3.79972 3.08028,6.88 6.88,6.88c3.79972,0 6.88,-3.08028 6.88,-6.88c0,-3.79972 -3.08028,-6.88 -6.88,-6.88zM86,48.16c-20.85771,0 -37.84,16.98229 -37.84,37.84c0,20.85771 16.98229,37.84 37.84,37.84c20.85771,0 37.84,-16.98229 37.84,-37.84c0,-20.85771 -16.98229,-37.84 -37.84,-37.84zM86,55.04c17.13948,0 30.96,13.82052 30.96,30.96c0,17.13948 -13.82052,30.96 -30.96,30.96c-17.13948,0 -30.96,-13.82052 -30.96,-30.96c0,-17.13948 13.82052,-30.96 30.96,-30.96z"
+              ></path>
+            </g>
+          </g>
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          x="0px"
+          y="0px"
+          width="24"
+          height="24"
+          viewbox="0 0 172 172"
+          style=" fill:#000000;">
+          <g
+            fill="none"
+            fill-rule="nonzero"
+            stroke="none"
+            stroke-width="1"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-miterlimit="10"
+            stroke-dasharray=""
+            stroke-dashoffset="0"
+            font-family="none"
+            font-weight="none"
+            font-size="none"
+            text-anchor="none"
+            style="mix-blend-mode: normal">
+            <path d="M0,172v-172h172v172z" fill="none"></path>
+            <g fill="#ffffff">
+              <path
+                d="M30.96,13.76c-9.45834,0 -17.2,7.74166 -17.2,17.2v110.08c0,9.45834 7.74166,17.2 17.2,17.2h57.90219c0.37149,0.0614 0.75054,0.0614 1.12203,0h19.51797c0.37149,0.0614 0.75054,0.0614 1.12203,0h30.41578c9.45834,0 17.2,-7.74166 17.2,-17.2v-110.08c0,-9.45834 -7.74166,-17.2 -17.2,-17.2zM30.96,20.64h110.08c5.73958,0 10.32,4.58042 10.32,10.32v110.08c0,5.73958 -4.58042,10.32 -10.32,10.32h-27.52v-48.16h13.14187l4.81735,-24.08h-17.95922v-6.88c0,-1.91777 0.18249,-2.06768 0.8264,-2.48594c0.64392,-0.41826 2.63362,-0.95406 6.0536,-0.95406h10.32v-19.37015l-1.96187,-0.93391c0,0 -7.90182,-3.77594 -18.67813,-3.77594c-7.74,0 -14.09854,3.0838 -18.1675,8.17c-4.06896,5.0862 -5.9125,11.89667 -5.9125,19.35v6.88h-10.32v24.08h10.32v48.16h-55.04c-5.73958,0 -10.32,-4.58042 -10.32,-10.32v-110.08c0,-5.73958 4.58042,-10.32 10.32,-10.32zM110.08,51.6c7.15197,0 11.65252,1.57709 13.76,2.41203v7.90797h-3.44c-3.95883,0 -7.13127,0.32749 -9.80265,2.06265c-2.67138,1.73519 -3.95735,5.02888 -3.95735,8.25735v13.76h16.44078l-2.06265,10.32h-14.37813v55.04h-13.76v-55.04h-10.32v-10.32h10.32v-13.76c0,-6.30667 1.59646,-11.5362 4.4075,-15.05c2.81104,-3.5138 6.7725,-5.59 12.7925,-5.59z"
+              ></path>
+            </g>
+          </g>
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          x="0px"
+          y="0px"
+          width="24"
+          height="24"
+          viewbox="0 0 172 172"
+          style=" fill:#000000;">
+          <g
+            fill="none"
+            fill-rule="nonzero"
+            stroke="none"
+            stroke-width="1"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-miterlimit="10"
+            stroke-dasharray=""
+            stroke-dashoffset="0"
+            font-family="none"
+            font-weight="none"
+            font-size="none"
+            text-anchor="none"
+            style="mix-blend-mode: normal">
+            <path d="M0,172v-172h172v172z" fill="none"></path>
+            <g fill="#ffffff">
+              <path
+                d="M117.7125,18.8125c-20.57281,0 -37.3025,16.72969 -37.3025,37.3025c0,1.23625 0.30906,2.44563 0.43,3.655c-25.43719,-2.43219 -47.93156,-14.68719 -63.21,-33.4325c-0.71219,-0.90031 -1.81406,-1.38406 -2.96969,-1.30344c-1.14219,0.08062 -2.16344,0.73906 -2.72781,1.73344c-3.21156,5.52281 -5.0525,11.87875 -5.0525,18.705c0,8.26406 2.95625,15.82938 7.525,22.0375c-0.88687,-0.38969 -1.85437,-0.60469 -2.6875,-1.075c-1.06156,-0.56437 -2.33812,-0.5375 -3.37281,0.08063c-1.03469,0.61812 -1.66625,1.73344 -1.67969,2.92937v0.43c0,12.67156 6.5575,23.67688 16.2325,30.4225c-0.1075,-0.01344 -0.215,0.02688 -0.3225,0c-1.1825,-0.20156 -2.37844,0.215 -3.17125,1.11531c-0.79281,0.90031 -1.04812,2.15 -0.69875,3.29219c3.84313,11.94594 13.6525,21.07 25.8,24.4025c-9.675,5.75125 -20.89531,9.1375 -33.0025,9.1375c-2.62031,0 -5.13312,-0.13437 -7.6325,-0.43c-1.6125,-0.215 -3.15781,0.72563 -3.69531,2.2575c-0.55094,1.53188 0.05375,3.23844 1.43781,4.085c15.52031,9.95719 33.94313,15.8025 53.75,15.8025c32.10219,0 57.28406,-13.41062 74.175,-32.5725c16.89094,-19.16187 25.6925,-44.04812 25.6925,-67.295c0,-0.98094 -0.08062,-1.935 -0.1075,-2.9025c6.30219,-4.82406 11.9325,-10.48125 16.34,-17.0925c0.87344,-1.27656 0.77938,-2.98312 -0.22844,-4.16562c-0.99438,-1.1825 -2.67406,-1.54531 -4.07156,-0.88688c-1.77375,0.79281 -3.84312,0.87344 -5.6975,1.505c2.44563,-3.26531 4.54188,-6.78594 5.805,-10.75c0.43,-1.35719 -0.04031,-2.84875 -1.15562,-3.73562c-1.11531,-0.87344 -2.67406,-0.98094 -3.89688,-0.24188c-5.87219,3.48031 -12.37594,5.92594 -19.2425,7.4175c-6.665,-6.235 -15.43969,-10.4275 -25.2625,-10.4275zM117.7125,25.6925c8.77469,0 16.70281,3.74906 22.2525,9.675c0.83313,0.86 2.05594,1.22281 3.225,0.9675c4.48813,-0.88687 8.74781,-2.19031 12.9,-3.87c-2.39187,3.225 -5.34812,5.97969 -8.815,8.0625c-1.57219,0.76594 -2.31125,2.58 -1.73344,4.23281c0.56437,1.63937 2.28437,2.59344 3.99094,2.21719c3.44,-0.41656 6.50375,-1.81406 9.7825,-2.6875c-2.94281,3.18469 -6.16781,6.06031 -9.675,8.6c-0.95406,0.69875 -1.47812,1.8275 -1.3975,3.01c0.05375,1.3975 0.1075,2.78156 0.1075,4.1925c0,21.5 -8.25062,44.84094 -23.9725,62.6725c-15.72187,17.83156 -38.8075,30.315 -69.015,30.315c-13.71969,0 -26.67344,-3.03687 -38.3775,-8.385c14.5125,-1.11531 27.89625,-6.24844 38.7,-14.7275c1.12875,-0.90031 1.57219,-2.40531 1.11531,-3.77594c-0.45688,-1.37063 -1.72,-2.31125 -3.15781,-2.35156c-11.34125,-0.20156 -20.84156,-6.79937 -25.9075,-16.125c0.18813,0 0.34938,0 0.5375,0c3.39969,0 6.75906,-0.43 9.89,-1.29c1.505,-0.44344 2.53969,-1.84094 2.48594,-3.41312c-0.05375,-1.57219 -1.16906,-2.91594 -2.70094,-3.25188c-12.24156,-2.4725 -21.41937,-12.44312 -23.5425,-24.8325c3.46688,1.19594 7.01438,2.13656 10.8575,2.2575c1.57219,0.09406 2.99656,-0.88687 3.48031,-2.37844c0.48375,-1.49156 -0.1075,-3.13094 -1.43781,-3.96406c-8.17,-5.46906 -13.545,-14.78125 -13.545,-25.37c0,-3.92375 1.02125,-7.525 2.365,-10.965c17.2,18.87969 41.28,31.41688 68.4775,32.7875c1.075,0.05375 2.12313,-0.38969 2.82188,-1.20937c0.69875,-0.83313 0.9675,-1.935 0.72562,-2.98313c-0.52406,-2.23062 -0.86,-4.59562 -0.86,-6.9875c0,-16.85062 13.57188,-30.4225 30.4225,-30.4225z"
+              ></path>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </footer>
+
+    <!--BOOTSTRAP JS-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+      crossorigin="anonymous"
+    ></script>
+
+    <!--LEAFLET MAP JAVASCRIPT-->
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+
+    <!--LORDICON JS-->
+    <script src="https://cdn.lordicon.com/libs/frhvbuzj/lord-icon-2.0.2.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
